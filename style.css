@@ -1,0 +1,49 @@
+.arrow {
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  top: 46%;
+  font-size: 20px;
+}
+
+.back {
+  padding: 9px;
+  position: absolute;
+  left: 0;
+  top: 46%;
+  font-size: 20px;
+}
+
+.back:hover {
+  opacity: 80%;
+  background-color: rgb(205, 205, 205);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
+
+.arrow:hover {
+  opacity: 80%;
+  background-color: rgb(205, 205, 205);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  margin: auto !important;
+  width: fit-content !important;
+}
+
+img {
+  width: 800px;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.photo {
+  display: none;
+  border: 1px solid black;
+  width: fit-content;
+  overflow: clip;
+  margin: 0;
+}
