@@ -23,24 +23,44 @@
         <img src="./2.png" alt="" class="img-fluid" />
       </div>
       <div class="photo" id="third-img">
-        <img src="./3.png" alt="" class="" />
+        <img src="./3.png" alt="" class="img-fluid" />
       </div>
       <div class="photo">
-        <img src="./react.png" alt="" class="" />
+        <img src="./react.png" alt="" class="img-fluid" />
       </div>
-      <a class="arrow" id="slide">❯</a>
-      <a class="back">❮</a>
+      <a class="arrow" onClick="slidePhoto(1)">❯</a>
+      <a class="back" onClick="slidePhoto(-1)">❮</a>
+      <div class="dots d-flex justify-content-center">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
     </div>
     <script>
-      document.getElementById("first-img").style.display = "block";
-      function slidePhoto(event) {
-        event.preventDefault();
-        document.getElementById("first-img").style.display = "none";
-        document.getElementById("second-img").style.display = "block";
-      }
+      let index = 0;
+      let images = document.getElementsByClassName("photo");
+      let dot = document.getElementsByClassName("dot");
 
-      let arrow = document.querySelector("#slide");
-      arrow.addEventListener("click", slidePhoto);
+      function slidePhoto(i) {
+        index += i;
+        if (index == images.length) {
+          index = 0;
+        }
+
+        if (index < 0) {
+          index = images.length - 1;
+        }
+        for (let i = 0; i < images.length; i++) {
+          images[i].style.display = "none";
+          dot[i].classList.remove("active");
+        }
+
+        images[index].style.display = "block";
+        dot[index].classList.add("active");
+      }
+      dot[index].classList.add("active");
+      document.getElementsByClassName("photo")[index].style.display = "block";
     </script>
   </body>
 </html>

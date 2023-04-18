@@ -42,8 +42,21 @@ img {
 
 .photo {
   display: none;
-  border: 1px solid black;
+  border: 1px solid rgb(152, 152, 152);
+  border-radius: 20px;
   width: fit-content;
   overflow: clip;
   margin: 0;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 20px;
+  background-color: rgba(199, 199, 199, 0.733);
+  margin: 7px 5px;
+}
+
+.active {
+  background-color: rgb(173, 173, 173);
 }
